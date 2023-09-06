@@ -25,9 +25,8 @@ pipeline {
             steps {
 
                 withCredentials([string(credentialsId: 'github_token', variable: 'gitHubToken')]) {
-                    // do something with the file, for instance 
-                    sh 'echo $gitHubToken'
-                sh label: '', script: 'terraform plan'
+                    // do something with the file, for instance                     
+                sh label: '', script: 'terraform plan --var githubToken=$gitHubToken'
                 }
                 
             }
