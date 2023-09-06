@@ -11,7 +11,7 @@ pipeline {
                sh label: '', script: 'terraform init'
                sh 'whoami'
                sh 'pwd'
-               sh 'source /home/ec2-user/initialize.sh'
+               sh 'source /tmp/initialize.sh'
             }
         }
 
