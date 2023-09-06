@@ -9,6 +9,8 @@ pipeline {
         stage('Init') {
             steps {
                sh label: '', script: 'terraform init'
+               sh 'whoami'
+               sh 'pwd'
             }
         }
 
