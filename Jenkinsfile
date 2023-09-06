@@ -3,9 +3,33 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Init') {
             steps {
-               echo 'This is a minimal pipeline.'
+               sh label: '', script: 'terraform init'
+            }
+        }
+
+        stage('validate') {
+            steps {
+               sh label: '', script: 'terraform validate'
+            }
+        }
+
+        stage('Plan') {
+            steps {
+               sh label: '', script: 'terraform plan'
+            }
+        }
+
+        stage('Approve') {
+            steps {
+               echo "ask for approval"
+            }
+        }
+
+        stage('Apply') {
+            steps {
+               echo "apply changes"
             }
         }
     }
