@@ -24,7 +24,7 @@ pipeline {
         stage('Plan') {
             steps {
 
-                withCredentials([file(credentialsId: 'github_token', variable: 'gitHubToken')]) {
+                withCredentials([string(credentialsId: 'github_token', variable: 'gitHubToken')]) {
                     // do something with the file, for instance 
                     sh 'echo $gitHubToken'
                 sh label: '', script: 'terraform plan'
