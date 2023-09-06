@@ -23,6 +23,7 @@ pipeline {
 
         stage('Plan') {
             steps {
+                sh 'echo $TF_VAR_githubToken'
                sh label: '', script: 'terraform plan'
             }
         }
