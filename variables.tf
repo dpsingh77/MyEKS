@@ -1,11 +1,11 @@
 variable githubToken {
-    type = String
+    type = string
 }
 
 variable aws_access_key {
-    type = String
+    type = string
 }
 
 variable aws_secret_key {
-    type = String
+    type = string
 }
